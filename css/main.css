@@ -1,0 +1,36 @@
+html {
+	text-align: center;
+
+}
+
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+
+.game {
+	width:60%;
+	margin:0 auto;
+}
+
+.row {
+	height:150px;
+
+}
+.col {
+	width:33%;
+	height:150px;
+	float:left;
+}
+
+.col-left {
+	border-right:5px solid black;
+}
+.col-right {
+	border-left:5px solid black;
+}
+.row-top {
+	border-bottom:5px solid black;
+}
+.row-bottom {
+	border-top:5px solid black;
+}
