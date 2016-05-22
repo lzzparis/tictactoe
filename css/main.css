@@ -42,6 +42,7 @@ h1 {
 	/*display:inline-block;*/
 	float:left;
 	position: relative;
+	text-align: center;
 }
 .col img {
 	width:90%;
