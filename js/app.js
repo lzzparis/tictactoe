@@ -1,40 +1,48 @@
 $(document).ready(function(){
 
 	var xTurn = true;
-	var playerX = Object.create(Player);
-	playerX.name="X";
-	var playerO = Object.create(Player);
-	playerO.name="O";
+	var playerX = Player("X");
+	var xTakeTurn =createTakeTurn(playerX);
+	var playerO = Player("O");
+	var oTakeTurn =createTakeTurn(playerO);
 	$(".col").click(function(){
 		$(this).children(".blank").css("display","none");
 		if(xTurn){
 			$(this).children(".x").css("display","inline-block");
-			takeTurn(playerX,this.id);
+			xTakeTurn(this.id);
 			xTurn=false;
+			console.log(playerX);
 		}
 		else {
 			$(this).children(".o").css("display","inline-block");
-			takeTurn(playerO,this.id);
+			oTakeTurn(this.id);
 			xTurn=true;
+			console.log(playerO);
 		}
 	});
 
 });
 
-var Player= {
-	name:"",
-	numTurns:0,
-	scoreCard:[[0,0,0],[0,0,0],[0,0,0]],
-	reset: function(){
-		scoreCard = [[0,0,0],[0,0,0],[0,0,0]];
+function Player(playerName)	{
+	return {
+		name:playerName,
+		numTurns:0,
+		scoreCard:[[0,0,0],[0,0,0],[0,0,0]],
+		reset: function(){
+			scoreCard = [[0,0,0],[0,0,0],[0,0,0]];
+		}
 	}
 };
 
-var takeTurn =function(player,move){
-	move=move.split("-");
-	recordMove(player,move[0],move[1]);
-	player.numTurns+=1;
-	if(player.numTurns>=3){score(player,move[0],move[1])};
+
+	
+var createTakeTurn = function(player){
+	return function(move){
+		move=move.split("-");
+		recordMove(player,move[0],move[1]);
+		player.numTurns+=1;
+		if(player.numTurns>=3){score(player,move[0],move[1])};
+	}
 }
 
 var recordMove = function(player,col,row){
