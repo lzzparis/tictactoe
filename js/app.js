@@ -5,20 +5,31 @@ $(document).ready(function(){
 	var xTakeTurn =createTakeTurn(playerX);
 	var playerO = Player("O");
 	var oTakeTurn =createTakeTurn(playerO);
+	var won = false;
 	$(".col").click(function(){
-		$(this).children(".blank").css("display","none");
-		if(xTurn){
-			$(this).children(".x").css("display","inline-block");
-			xTakeTurn(this.id);
-			xTurn=false;
-			console.log(playerX);
+		if(playerX.won || playerO.won){}
+		else{ 	
+			$(this).children(".blank").css("display","none");
+			if(xTurn){
+				$(this).children(".x").css("display","inline-block");
+				xTakeTurn(this.id);
+				xTurn=false;
+			}
+			else {
+				$(this).children(".o").css("display","inline-block");
+				oTakeTurn(this.id);
+				xTurn=true;
+			}
 		}
-		else {
-			$(this).children(".o").css("display","inline-block");
-			oTakeTurn(this.id);
-			xTurn=true;
-			console.log(playerO);
-		}
+	});
+	$("#new-game").click(function(){
+		playerX.reset();
+		playerO.reset();
+		$(".col").children(".blank").css("display","inline-block");
+		$(".col").children(".x").css("display","none");
+		$(".col").children(".o").css("display","none");
+		$("#results").text("");
+		$("#new-game").css("display","none");
 	});
 
 });
@@ -27,9 +38,12 @@ function Player(playerName)	{
 	return {
 		name:playerName,
 		numTurns:0,
+		won:false,
 		scoreCard:[[0,0,0],[0,0,0],[0,0,0]],
 		reset: function(){
-			scoreCard = [[0,0,0],[0,0,0],[0,0,0]];
+			this.numTurns=0;
+			this.won = false;
+			this.scoreCard = [[0,0,0],[0,0,0],[0,0,0]];
 		}
 	}
 };
@@ -75,7 +89,11 @@ var score = function(player,col,row){
 
 
 var win = function(player){
-	alert(player.name+" wins!!");
+	$("#results").text(player.name+" wins!!");
+	player.won=true;
+	$("#new-game").css("display","inline-block");
+	$(".col:hover").css("background-color","#998395");
 }
+
 
 

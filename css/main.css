@@ -26,7 +26,7 @@ h1 {
 }
 
 .game {
-	width:50%;
+	width:40%;
 	margin:0 auto;
 }
 
@@ -77,4 +77,21 @@ h1 {
 }
 .blank{
 	display:inline-block;
+}
+
+#results{
+	margin:1rem;
+	font-family: Montserrat, sans-serif;
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+#new-game{
+	display: none;
+	font-family: Montserrat, sans-serif;
+	font-size: 1em;
+	background-color: #ccc290;
+	border-radius: 5px;
+	text-transform: lowercase;
+
 }
