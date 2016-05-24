@@ -6,7 +6,13 @@ $(document).ready(function(){
 	var playerO = Player("O");
 	var oTakeTurn =createTakeTurn(playerO);
 	var won = false;
-	$(".col").click(function(){
+	$(".col").mouseenter(function(){
+		$(this).css("background-color","#ccc290");
+	})
+	.mouseleave(function(){
+		$(this).css("background-color","#998395");
+	})
+	.click(function(){
 		if(playerX.won || playerO.won){}
 		else{ 	
 			$(this).children(".blank").css("display","none");
@@ -92,7 +98,7 @@ var win = function(player){
 	$("#results").text(player.name+" wins!!");
 	player.won=true;
 	$("#new-game").css("display","inline-block");
-	$(".col:hover").css("background-color","#998395");
+	$(".col").off("mouseenter"); //TODO
 }
 
 
