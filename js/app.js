@@ -13,20 +13,21 @@ $(document).ready(function(){
 		$(this).css("background-color","#998395");
 	})
 	.click(function(){
-		if(playerX.won || playerO.won){}
-		else{ 	
-			$(this).children(".blank").css("display","none");
-			if(xTurn){
-				$(this).children(".x").css("display","inline-block");
-				xTakeTurn(this.id);
-				xTurn=false;
-			}
-			else {
-				$(this).children(".o").css("display","inline-block");
-				oTakeTurn(this.id);
-				xTurn=true;
-			}
+		var displayVal = $(this).children(".blank").css("display");
+		if(playerX.won || playerO.won || (displayVal === "none")) return;
+		
+		$(this).children(".blank").css("display","none");
+		if(xTurn){
+			$(this).children(".x").css("display","inline-block");
+			xTakeTurn(this.id);
+			xTurn=false;
 		}
+		else {
+			$(this).children(".o").css("display","inline-block");
+			oTakeTurn(this.id);
+			xTurn=true;
+		}
+		
 	});
 	$("#new-game").click(function(){
 		playerX.reset();
