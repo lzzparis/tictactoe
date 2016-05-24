@@ -1,5 +1,6 @@
 html {
 	text-align: center;
+	background-color: #998395;
 
 }
 
@@ -7,30 +8,94 @@ html {
 	box-sizing: border-box;
 }
 
+h1 {
+	font-family: "Montserrat",sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;	
+	font-size: 4rem;
+	margin:1rem;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
 .game {
-	width:60%;
+	width:40%;
 	margin:0 auto;
 }
 
+
 .row {
-	height:150px;
+	padding:0em;
+	/*height:150px;*/
 
 }
 .col {
 	width:33%;
-	height:150px;
+	/*height:150px;*/
+	/*display:inline-block;*/
 	float:left;
+	position: relative;
+	text-align: center;
+}
+.col img {
+	width:90%;
+	/*position:absolute;*/
+	/*top:0;*/
+	/*left:0;*/
 }
 
+/*.col:hover {
+	background-color: #ccc290;
+}*/
+
+
 .col-left {
-	border-right:5px solid black;
+	border-right:6px solid #444;
 }
 .col-right {
-	border-left:5px solid black;
+	border-left:6px solid #444;
+}
+.col-mid {
+	border-left:3px solid transparent;
+	border-right:3px solid transparent;
 }
 .row-top {
-	border-bottom:5px solid black;
+	border-bottom:5px solid #444;
 }
 .row-bottom {
-	border-top:5px solid black;
+	border-top:5px solid #444;
+}
+
+.x {
+	display:none;
+}
+.o {
+	display:none;
+}
+.blank{
+	display:inline-block;
+}
+
+#results{
+	margin:1rem;
+	font-family: Montserrat, sans-serif;
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+#new-game{
+	display: none;
+	font-family: Montserrat, sans-serif;
+	font-size: 1em;
+	background-color: #ccc290;
+	border-radius: 5px;
+	text-transform: lowercase;
+
 }

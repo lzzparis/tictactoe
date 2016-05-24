@@ -3,29 +3,76 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tic Tac Toe</title>
+	<link href='//fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!-- <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.4.1/jasmine_favicon.png">
+<link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-2.4.1/jasmine.css"> -->
+
 
 </head>
 <body>
 	<h1>Tic Tac Toe</h1>
 	<div class="game">
-		<div class="row row-top">
-			<div class="col col-left">topleft</div>
-			<div class="col col-mid">topmid</div>
-			<div class="col col-right">topright</div>
+		<div class="row row-top clearfix">
+			<div id="0-0" class="col col-left">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
+			<div id="1-0" class="col col-mid">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
+			<div id="2-0" class="col col-right">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
 		</div>
-		<div class="row row-mid">
-			<div class="col col-left">midleft</div>
-			<div class="col col-mid">midmid</div>
-			<div class="col col-right">midright</div>
+		<div class="row row-mid clearfix">
+			<div id="0-1" class="col col-left">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
+			<div id="1-1" class="col col-mid">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
+			<div id="2-1" class="col col-right">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
 		</div>
-		<div class="row row-bottom">
-			<div class="col col-left">bottomleft</div>
-			<div class="col col-mid">bottom mid</div>
-			<div class="col col-right">bottomright</div>
+		<div class="row row-bottom clearfix">
+			<div id="0-2" class="col col-left">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
+			<div id="1-2" class="col col-mid">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
+			<div id="2-2" class="col col-right">
+				<img class="x" src="images/ex.png">
+				<img class="o" src="images/oh.png">
+				<img class="blank" src="images/blank.png">
+			</div>
 		</div>
-
 	</div>
+		<div id="results"></div>
+		<button id="new-game">New Game?</button>
+
+	<script src="//code.jquery.com/jquery.min.js"></script>
+<!-- 	<script type="text/javascript" src="jasmine/lib/jasmine-2.4.1/jasmine.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-2.4.1/jasmine-html.js"></script>
+<script type="text/javascript" src="jasmine/lib/jasmine-2.4.1/boot.js"></script> -->
+	<script src="js/app.js"></script>
 </body>
 </html>
