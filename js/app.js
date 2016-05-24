@@ -32,9 +32,9 @@ $(document).ready(function(){
 	$("#new-game").click(function(){
 		playerX.reset();
 		playerO.reset();
-		$(".col").children(".blank").css("display","inline-block");
-		$(".col").children(".x").css("display","none");
-		$(".col").children(".o").css("display","none");
+		$(".blank").css("display","inline-block");
+		$(".x").css("display","none");
+		$(".o").css("display","none");
 		$("#results").text("");
 		$("#new-game").css("display","none");
 	});

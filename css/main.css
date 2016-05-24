@@ -57,10 +57,14 @@ h1 {
 
 
 .col-left {
-	border-right:5px solid #444;
+	border-right:6px solid #444;
 }
 .col-right {
-	border-left:5px solid #444;
+	border-left:6px solid #444;
+}
+.col-mid {
+	border-left:3px solid transparent;
+	border-right:3px solid transparent;
 }
 .row-top {
 	border-bottom:5px solid #444;
